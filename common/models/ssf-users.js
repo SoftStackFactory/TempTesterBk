@@ -1,4 +1,20 @@
 module.exports = function(SsfUsers) {
+    SsfUsers.afterRemote('login', function(context, instance, next) {
+        // console.log(context, instance, next);
+        SsfUsers.findOne({
+            where:{
+                id: instance.__data.userId
+            }
+        }, function(err, res) {
+            if(err) {
+                next(err);
+            } else {
+                instance.__data.firstName = res.firstName;
+                instance.__data.lastName = res.lastName;
+                next(0, instance);
+            }
+        });
+    });
     SsfUsers.beforeRemote('*.updateAttributes', function(context, instance, next) {
         checkUsers(context.req.accessToken.userId);
         function checkUsers(userId) {
