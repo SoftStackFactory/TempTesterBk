@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongo": {
+    "name": "mongo",
+    "connector": "mongodb"
+  },
+  "Paging": {
+    "name": "Paging",
+    "connector": "mongodb"
+  }
+}

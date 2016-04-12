@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Questions": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "TestResults": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "SSFUsers": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Employers": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "CompanyUser": {
+    "dataSource": "mongo",
+    "public": true
+  }
+}

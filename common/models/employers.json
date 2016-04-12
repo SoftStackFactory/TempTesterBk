@@ -1,0 +1,70 @@
+{
+  "name": "Employers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    },
+    "buttonPrimary": {
+      "type": "string",
+      "required": false
+    },
+    "buttonSecondary": {
+      "type": "string",
+      "required": false
+    },
+    "header": {
+      "type": "string",
+      "required": false
+    },
+    "font": {
+      "type": "string",
+      "required": false
+    },
+    "fontColor": {
+      "type": "string",
+      "required": false
+    },
+    "iconUrl": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": [
+        "find",
+        "createEmployer"
+      ]
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "updateAttributes"
+    }
+  ],
+  "methods": {}
+}
