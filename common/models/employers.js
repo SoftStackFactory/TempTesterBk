@@ -64,7 +64,6 @@ module.exports = function(Employers) {
         }
         
         function findCompany() {
-            var tempObj = 
             Employers.findOne({
                 where: {
                     company_name: company_name
@@ -89,8 +88,7 @@ module.exports = function(Employers) {
             //check if company name already exists
             Employers.create({
                 company_name: company_name,
-                password: password,
-                active: false
+                active: true
             }, function(errComp, createdComp) {
                 if(errComp) {
                     var err = new Error("Something went wrong with creating the company.");
