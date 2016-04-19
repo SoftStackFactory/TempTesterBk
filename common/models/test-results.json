@@ -41,6 +41,9 @@
     "createDate": {
       "type": "date",
       "required": true
+    },
+    "shareDate": {
+      "type": "date"
     }
   },
   "validations": [],
