@@ -14,7 +14,7 @@
   {
     "Question_Number": 2,
     "Answer_ID": "A",
-    "Text": "I try to find a compromise situation.",
+    "Text": "I try to find a compromising situation.",
     "Style": "Compromising"
   },
   {
@@ -38,7 +38,7 @@
   {
     "Question_Number": 4,
     "Answer_ID": "A",
-    "Text": "I try to find a compromise solution.",
+    "Text": "I try to find a compromising solution.",
     "Style": "Compromising"
   },
   {
@@ -116,7 +116,7 @@
   {
     "Question_Number": 10,
     "Answer_ID": "B",
-    "Text": "I try to find a compromise solution.",
+    "Text": "I try to find a compromising solution.",
     "Style": "Compromising"
   },
   {
