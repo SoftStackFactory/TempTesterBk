@@ -124,7 +124,8 @@ module.exports = function(Employers) {
             var tempObj = {
                 email: email,
                 password: password,
-                companyId: companyId
+                companyId: companyId,
+                created: new Date()
             };
             if(userId !== undefined)
                 tempObj.id = userId;

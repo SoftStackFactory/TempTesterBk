@@ -39,4 +39,13 @@ module.exports = function(SsfUsers) {
             });
         }
     });
+    
+    SsfUsers.observe('before save', function(ctx, next) {
+        if(ctx.isNewInstance === true) {
+            ctx.instance.__data.created = new Date();
+            next();
+        }else {
+            next();
+        }
+    });
 };

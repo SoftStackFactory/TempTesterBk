@@ -3,10 +3,9 @@ module.exports = function(TestResults) {
     TestResults.observe('before save', function(ctx, next) {
         if(ctx.isNewInstance === true) {
             ctx.instance.__data.shareDate = new Date();
-            console.log(ctx.instance.__data.shareDate);
             next();
         }else {
-             next();
+            next();
         }
     });
     
