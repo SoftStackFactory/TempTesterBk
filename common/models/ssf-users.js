@@ -26,6 +26,8 @@ module.exports = function(SsfUsers) {
                     err.status = 401;
                     next(err);
                 } else {
+                    //needed to make sure a user doen't get disconnected from their existing data
+                    delete context.args.data.id;
                     testLogin(userRes[0].__data.email, context.args.data.oldPassword);
                 }
             });
