@@ -92,6 +92,7 @@ module.exports = function(TestResults) {
 }
         */
         var async = require('async');
+        if(date && typeof date !== 'object') date = {lt: date};
         var ssfUsers = TestResults.app.models.SSFUsers;
         var possibleErrors = [];
         limit = limit === undefined ? filters.where.limit : limit;
@@ -101,7 +102,7 @@ module.exports = function(TestResults) {
         //     cb(error);
         // }
         filters = filters !== undefined ?  filters : {'where': {}};
-        filters.where.createDate = {lt: date};
+        filters.where.createDate = date;
         var ModelCall = TestResults.app.models.TestResults;
         
         getInstances();
@@ -181,6 +182,7 @@ module.exports = function(TestResults) {
             		else {
             			k.firstName = usersResponse[0].firstName;
             			k.lastName = usersResponse[0].lastName;
+            			k.email = usersResponse[0].email;
             			next();
             		}
             	});
@@ -209,7 +211,7 @@ module.exports = function(TestResults) {
     TestResults.remoteMethod('page', {
         http: {path: '/page', verb: 'post'},
         accepts: [
-            {arg: 'date', type: 'string', "required": true},
+            {arg: 'date', type: 'object', "required": true},
             // {arg: 'modelName', type: 'string', "required": true},
             {arg: 'limit', type: 'number'},
             {arg: 'filters', type: 'object'},
